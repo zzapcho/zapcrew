@@ -1,0 +1,17 @@
+{
+  "name": "ZapCrew",
+  "short_name": "ZapCrew",
+  "description": "친구들 전용 올인원 커뮤니티 허브",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#11100f",
+  "theme_color": "#171513",
+  "icons": [
+    {
+      "src": "icons/zapcrew-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

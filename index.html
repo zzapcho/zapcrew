@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171513">
+  <title>ZapCrew</title>
+  <link rel="manifest" href="public/manifest.json">
+  <link rel="icon" href="public/icons/zapcrew-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/styles/style.css">
+</head>
+<body>
+  <div class="titlebar">
+    <div class="titlebar-drag">
+      <span class="titlebar-title">ZapCrew</span>
+    </div>
+    <div class="titlebar-controls">
+      <button class="titlebar-btn" id="btn-minimize" aria-label="최소화">─</button>
+      <button class="titlebar-btn titlebar-close" id="btn-close" aria-label="닫기">×</button>
+    </div>
+  </div>
+
+  <div id="view-login" class="view active">
+    <div class="login-content">
+      <div class="logo">
+        <h1>ZapCrew</h1>
+        <p>friends community hub</p>
+      </div>
+      <div class="setup-box auth-box">
+        <div class="settings-group">
+          <label for="login-name">닉네임</label>
+          <input class="input" id="login-name" autocomplete="nickname" placeholder="예: zzapcho">
+        </div>
+        <div class="settings-group">
+          <label for="login-color">아바타 색상</label>
+          <input class="input input-color" id="login-color" type="color" value="#d8b66a">
+        </div>
+        <div class="auth-actions">
+          <button class="btn btn-primary btn-login" id="btn-create-account">계정 만들기</button>
+          <button class="btn btn-outline" id="btn-login">로그인</button>
+        </div>
+      </div>
+      <p class="login-hint">이 1차 버전은 브라우저 저장소에만 저장됩니다.</p>
+    </div>
+  </div>
+
+  <div id="view-main" class="view">
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="avatar" id="player-avatar"></div>
+        <div class="profile-text">
+          <span class="player-name" id="player-name">Player</span>
+          <span class="profile-status" id="player-status">온라인</span>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <button class="nav-btn active" data-page="home">⌂ 홈</button>
+        <button class="nav-btn" data-page="friends">친구</button>
+        <button class="nav-btn" data-page="chat">DM</button>
+        <button class="nav-btn" data-page="crews">크루</button>
+        <button class="nav-btn" data-page="games">게임</button>
+        <button class="nav-btn" data-page="drive">드라이브</button>
+        <button class="nav-btn" data-page="calendar">일정</button>
+        <button class="nav-btn" data-page="community">커뮤니티</button>
+        <div class="nav-sep"></div>
+        <button class="nav-btn" data-page="search">검색</button>
+        <button class="nav-btn" data-page="settings">설정</button>
+      </nav>
+
+      <button class="btn btn-text btn-logout" id="btn-logout">로그아웃</button>
+    </aside>
+
+    <main class="content">
+      <section id="page-home" class="page active"></section>
+      <section id="page-friends" class="page"></section>
+      <section id="page-chat" class="page"></section>
+      <section id="page-crews" class="page"></section>
+      <section id="page-games" class="page"></section>
+      <section id="page-drive" class="page"></section>
+      <section id="page-calendar" class="page"></section>
+      <section id="page-community" class="page"></section>
+      <section id="page-search" class="page"></section>
+      <section id="page-settings" class="page"></section>
+    </main>
+  </div>
+
+  <input id="hidden-file-input" type="file" multiple hidden>
+  <input id="hidden-import-input" type="file" accept="application/json" hidden>
+  <div id="toast-container"></div>
+  <script type="module" src="src/app/main.js"></script>
+</body>
+</html>
